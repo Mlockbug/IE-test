@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movem : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    Vector2 movemen;
+    public float moveSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,6 @@ public class movem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(rb.position + new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))* 0.25f);
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))* moveSpeed;
     }
 }
